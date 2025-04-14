@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--font-family-primary);
+}
+
+:root{
+    /* Primary */
+    --color-primary-lime: hsl(61, 70%, 52%);
+    --color-primary-red: hsl(4, 69%, 50%);
+    
+  /* Neutral */
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-neutral-slate-100: hsl(202, 86%, 94%);
+  --color-neutral-slate-300: hsl(203, 41%, 72%);
+  --color-neutral-slate-500: hsl(200, 26%, 54%);
+  --color-neutral-slate-700: hsl(200, 24%, 40%);
+  --color-neutral-slate-900: hsl(202, 55%, 16%);
+
+  --font-family-primary: 'Plus Jakarta Sans', sans-serif;
+}
