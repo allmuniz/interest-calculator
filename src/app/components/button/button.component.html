@@ -1,4 +1,9 @@
-<button>
-    <img src="svg/icon-calculator.svg" alt="">
-    Calculate Repayments
+<button
+    (click)="submit()"  
+>
+    <img 
+        [src]="icone" 
+        [alt]="descricao"
+    >
+    {{ title }}
 </button>

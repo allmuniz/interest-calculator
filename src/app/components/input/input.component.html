@@ -1,10 +1,20 @@
 <div class="group-label-input">
 
-    <p>Mortgage Amount</p>
+    <p>{{ label }}</p>
 
     <div class="input-group">
-      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" autocomplete="off">
-      <span>year</span>
+
+      <input 
+        [type]="type"
+        required=""
+        [placeholder]="placeholder" 
+        autocomplete="off"
+        [value]="value"
+        (input)="onInput($event)"
+      >
+
+      <span>{{ span }}</span>
+
     </div>
 
 </div>

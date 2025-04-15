@@ -1,10 +1,16 @@
 <div class="group-radio">
-    <p>Mortgage type</p>
+    <p>{{ title }}</p>
 
     <label class="button-radio">
-        <input type="radio" name="opcao" value="repayment">
+        <input 
+            type="radio" 
+            [name]="conjunto" 
+            [value]="valueType"
+            [checked]="value === valueType"
+            (change)="onInput($event)"
+        >
         <span class="custom-radio"></span>
-        <span class="label-text">Repayment</span>
+        <span class="label-text">{{ label }}</span>
     </label>
     
 </div>
