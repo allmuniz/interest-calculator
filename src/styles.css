@@ -8,6 +8,7 @@
 :root{
     /* Primary */
     --color-primary-lime: hsl(61, 70%, 52%);
+    --color-secundary-lime: #fcfce7;
     --color-primary-red: hsl(4, 69%, 50%);
     
   /* Neutral */
