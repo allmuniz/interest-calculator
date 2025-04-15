@@ -1,18 +1,31 @@
-<main>
-    <header>
-        <h1>Interest Calculator</h1>
-        <p>Clear All</p>
-    </header>
-    <section>
-        <app-input></app-input>
-        <app-input></app-input>
-        <app-input></app-input>
-
-        <app-checkbox></app-checkbox>
-        <app-checkbox></app-checkbox>
-
-        <app-button></app-button>
-
-    </section>
+<body>
+    <main>
+        <header>
+            <h1>Interest Calculator</h1>
+            <p>Clear All</p>
+        </header>
+        <section>
+            <app-input></app-input>
+            <app-input></app-input>
+            <app-input></app-input>
     
-</main>
+            <app-checkbox></app-checkbox>
+            <app-checkbox></app-checkbox>
+    
+            <app-button></app-button>
+        </section>
+    </main>
+    <section class="card-section">
+        <div class="card-section-empty">
+            <img src="svg/illustration-empty.svg" alt="">
+            <h1>Results shown here</h1>
+            <p>Complete the from and click "calculate repayments" to see your monthly repayments would be.</p>
+        </div>
+        
+        <div class="card-section-full">
+            <h1>Your results</h1>
+            <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+            <app-interest-card></app-interest-card>
+        </div>
+    </section>
+</body>
