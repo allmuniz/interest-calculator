@@ -1,0 +1,23 @@
+@media (max-width: 767px) { 
+    main{
+        width: 80%;
+        margin: 7%;
+
+        header{
+            margin-bottom: 20px;
+        }
+    }
+    section{
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) { 
+
+}
+
+
+@media (min-width: 1024px) { 
+
+}
