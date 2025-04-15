@@ -1,28 +1,83 @@
-.group-radio{
-  margin-bottom: 10px;
+.group-radio {
+  margin-bottom: 7px;
 
   p{
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    color: var(--color-neutral-slate-500);
   }
-    
-  .button-radio{
-    border: 1px solid #ccc;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
+}
 
+.button-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border: 2px solid var(--color-neutral-slate-300);
+  border-radius: 10px;
+  background-color: var(--color-neutral-white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
 
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--color-neutral-slate-900);
+/* Esconde o radio padrão */
+.button-radio input[type="radio"] {
+  display: none;
+}
 
-    input[type="radio"] {
-      transform: scale(1.5);
-      margin: 10px;
-      cursor: pointer;
-      color: var(--color-neutral-slate-900);
-    }
-  }
+/* Custom bolinha */
+.custom-radio {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-neutral-slate-300);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+.label-text{
+  color: var(--color-neutral-slate-300);
+}
+
+.custom-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary-lime);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Estilo ao selecionar o radio */
+.button-radio input[type="radio"]:checked ~ .custom-radio {
+  border-color: var(--color-primary-lime);
+}
+
+.button-radio input[type="radio"]:checked ~ .custom-radio::after {
+  opacity: 1;
+}
+
+.button-radio input[type="radio"]:checked ~ .label-text {
+  font-weight: bold;
+  color: var(--color-neutral-slate-900);
+}
+
+/* Estilo do container todo quando selecionado */
+.button-radio input[type="radio"]:checked ~ .label-text::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--color-secundary-lime);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+/* Ou se preferir fazer via label diretamente (recomendado): */
+.button-radio:has(input[type="radio"]:checked) {
+  background-color: var(--color-secundary-lime);
+  border-color: var(--color-primary-lime);
 }
