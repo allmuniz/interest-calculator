@@ -1,37 +1,53 @@
 body{
     background-color: var(--color-neutral-white);
-}
 
-.card-section{
-    padding: 30px 0px;
-    display: flex;
-    flex-direction: column;
+    main{
+        header{
+            h1{
+                color: var(--color-neutral-slate-700);
+            }
+            button{
+                border: none;
+                border-bottom: 1px solid var(--color-neutral-slate-300);
 
-    background-color: var(--color-neutral-slate-900);
-
-    .card-section-empty{
-        width: 80%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-        justify-items: center;
-        text-align: center;
-
-        color: var(--color-neutral-white);
+                background-color: transparent;
+                color: var(--color-neutral-slate-300);
+            }
+        }
     }
-
-    .card-section-full{
-        width: 80%;
-        margin: auto;
+  
+    .card-section{
+        padding: 30px 0px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
-
-        color: var(--color-neutral-white);
-    } 
+    
+        background-color: var(--color-neutral-slate-900);
+    
+        .card-section-empty{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+    
+            color: var(--color-neutral-white);
+        }
+    
+        .card-section-full{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+    
+            color: var(--color-neutral-white);
+        } 
+    }
 }
+
 
 @media (max-width: 767px) { 
     main{
@@ -40,6 +56,9 @@ body{
 
         header{
             margin-bottom: 20px;
+            h1{
+                font-size: 25px;
+            }
         }
         section{
             width: 100%;
