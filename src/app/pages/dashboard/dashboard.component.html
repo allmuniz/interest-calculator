@@ -1,74 +1,79 @@
 <body>
-    <main>
-        <header>
-            <h1>Interest Calculator</h1>
-            <button
-                (click)="clear()"
-                class="btn-header"
-            >
-                Clear All
-            </button>
-        </header>
-        <form [formGroup]="interestForm">
-            <app-input
-                formControlName="capital"
-                label="Mortgage Amount"
-                type="number"
-                span="R$"
-            />
-            <app-input
-                formControlName="time"
-                label="Mortgage Term"
-                type="number"
-                span="years"
-            />
-            <app-input
-                formControlName="interestRate"
-                label="Interest Rate"
-                type="number"
-                span="%"
-            />
+    <div class="calculator-wrapper">
+
+        <main>
+            <header>
+                <h1>Interest Calculator</h1>
+                <button
+                    (click)="clear()"
+                    class="btn-header"
+                >
+                    Clear All
+                </button>
+            </header>
+            <form [formGroup]="interestForm">
+                <app-input
+                    formControlName="capital"
+                    label="Mortgage Amount"
+                    type="number"
+                    span="R$"
+                />
     
-            <app-checkbox
-                formControlName="type"
-                title="Mortgage Type"
-                conjunto="mortgageType"
-                valueType="1"
-                label="Simple"
-            />
-            <app-checkbox
-                formControlName="type"
-                conjunto="mortgageType"
-                valueType="2"
-                label="Compound"
-                [isLast]="true"
-            />
-
-            <app-button
-                (submit)="submit()"
-                icone="svg/icon-calculator.svg"
-                descricao="Calculator image"
-                title="calculate Repayments"
-            />
-
-        </form>
-    </main>
-    <section class="card-section">
-
-        <div class="card-section-empty" *ngIf="!interest">
-            <img src="svg/illustration-empty.svg" alt="">
-            <h1>Results shown here</h1>
-            <p>Complete the from and click "calculate repayments" to see your monthly repayments would be.</p>
-        </div>
+                <section class="inputs-middle">
+                    <app-input
+                        formControlName="time"
+                        label="Mortgage Term"
+                        type="number"
+                        span="years"
+                    />
+                    <app-input
+                        formControlName="interestRate"
+                        label="Interest Rate"
+                        type="number"
+                        span="%"
+                    />
+                </section>
         
-        <div class="card-section-full" *ngIf="interest">
-            <h1>Your results</h1>
-            <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
-            <app-interest-card
-                finalAmount="{{ interest.finalAmount }}"
-                interestAmount="{{ interest.interestAmount }}"
-            />
-        </div>
-
-    </section>
+                <app-checkbox
+                    formControlName="type"
+                    title="Mortgage Type"
+                    conjunto="mortgageType"
+                    valueType="1"
+                    label="Simple"
+                />
+                <app-checkbox
+                    formControlName="type"
+                    conjunto="mortgageType"
+                    valueType="2"
+                    label="Compound"
+                    [isLast]="true"
+                />
+    
+                <app-button
+                    (submit)="submit()"
+                    icone="svg/icon-calculator.svg"
+                    descricao="Calculator image"
+                    title="calculate Repayments"
+                />
+    
+            </form>
+        </main>
+        <section class="card-section">
+    
+            <div class="card-section-empty" *ngIf="!interest">
+                <img src="svg/illustration-empty.svg" alt="">
+                <h1>Results shown here</h1>
+                <p>Complete the from and click "calculate repayments" to see your monthly repayments would be.</p>
+            </div>
+            
+            <div class="card-section-full" *ngIf="interest">
+                <h1>Your results</h1>
+                <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+                <app-interest-card
+                    finalAmount="{{ interest.finalAmount }}"
+                    interestAmount="{{ interest.interestAmount }}"
+                />
+            </div>
+        </section>
+    </div>
 </body>

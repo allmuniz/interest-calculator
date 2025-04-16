@@ -87,3 +87,13 @@
   background-color: var(--color-secundary-lime);
   border-color: var(--color-primary-lime);
 }
+
+@media (min-width: 1024px) {
+  .group-radio{
+    p{
+      font-size: 13px;
+      margin-bottom: 5px;
+      color: var(--color-neutral-slate-500);
+    }
+  }
+}

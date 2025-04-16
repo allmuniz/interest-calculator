@@ -11,7 +11,7 @@
   .input-group {
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-neutral-slate-500);
     border-radius: 4px;
     overflow: hidden;
     width: 100%;
@@ -50,13 +50,24 @@
 
   /* Estilo quando o input estiver focado */
   .input-group:focus-within {
-    border: 2px solid var(--color-primary-lime); 
+    border: 1px solid var(--color-primary-lime); 
     background-color: var(--color-secundary-lime);
     
     span{
       background-color: var(--color-primary-lime);
       color: var(--color-neutral-slate-900);
       font-weight: bold;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .group-label-input {
+
+    margin-bottom: 15px;
+  
+    p {
+      margin-bottom: 10px;
     }
   }
 }
