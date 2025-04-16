@@ -71,5 +71,4 @@ export class DashboardComponent {
     this.interestForm.reset();
     this.interest = null;
   }
-  
 }

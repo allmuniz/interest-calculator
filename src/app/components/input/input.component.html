@@ -9,10 +9,10 @@
 
       <input 
         [type]="type"
-        required=""
+        required
         [placeholder]="placeholder" 
         autocomplete="off"
-        [value]="value"
+        [(ngModel)]="value"
         (input)="onInput($event)"
       >
 

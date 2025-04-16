@@ -12,5 +12,7 @@
         <span class="custom-radio"></span>
         <span class="label-text">{{ label }}</span>
     </label>
+
+    <p class="error-message" *ngIf="ngControl?.control?.invalid && ngControl?.control?.touched && isLast">This filed is required</p>
     
 </div>

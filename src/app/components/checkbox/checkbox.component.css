@@ -6,6 +6,12 @@
     margin-bottom: 10px;
     color: var(--color-neutral-slate-500);
   }
+
+  .error-message{
+    margin-top: 5px;
+    font-size: 10px;
+    color: var(--color-primary-red);
+  }
 }
 
 .button-radio {

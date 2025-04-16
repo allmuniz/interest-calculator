@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl  } from '@angular/forms';
+import { Component, Input, Optional, Self } from '@angular/core';
+import { ControlValueAccessor, FormsModule, NgControl  } from '@angular/forms';
 type InputTypes = "text" | "number"
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.css'
 })

@@ -1,17 +1,12 @@
-import { Component, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from '../input/input.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-checkbox',
-  imports: [ReactiveFormsModule],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CheckboxComponent),
-      multi: true
-    }
-  ],
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.css'
 })
@@ -20,6 +15,7 @@ export class CheckboxComponent implements ControlValueAccessor{
   @Input() label: string = '';
   @Input() conjunto: string = '';
   @Input() valueType: string = '';
+  @Input() isLast: boolean = false;
 
 
   value: string = '';
@@ -31,6 +27,14 @@ export class CheckboxComponent implements ControlValueAccessor{
     this.value = value;
     this.onChange(value);
     this.onTouched();
+  }
+
+  constructor(
+    @Self() @Optional() public ngControl: NgControl
+  ) {
+    if (this.ngControl != null) {
+      this.ngControl.valueAccessor = this;
+    }
   }
   
 
