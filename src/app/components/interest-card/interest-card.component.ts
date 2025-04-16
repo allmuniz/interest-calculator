@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class InterestCardComponent {
 
-  @Input() finalAmount: string= '';
-  @Input() interestAmount: string= '';
+  @Input() finalAmount: string = '';
+  @Input() interestAmount: string = '';
+  @Input() valueInvested: string = '';
 
 }
