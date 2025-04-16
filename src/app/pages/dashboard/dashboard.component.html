@@ -14,7 +14,7 @@
             <form [formGroup]="interestForm">
                 <app-input
                     formControlName="capital"
-                    label="Mortgage Amount"
+                    label="Initial Amount"
                     type="number"
                     span="R$"
                 />
@@ -22,7 +22,7 @@
                 <section class="inputs-middle">
                     <app-input
                         formControlName="time"
-                        label="Mortgage Term"
+                        label="Period"
                         type="number"
                         span="years"
                     />
@@ -36,7 +36,7 @@
         
                 <app-checkbox
                     formControlName="type"
-                    title="Mortgage Type"
+                    title="Calculation Type"
                     conjunto="mortgageType"
                     valueType="1"
                     label="Simple"
@@ -53,7 +53,7 @@
                     (submit)="submit()"
                     icone="svg/icon-calculator.svg"
                     descricao="Calculator image"
-                    title="calculate Repayments"
+                    title="Calculate"
                 />
     
             </form>
@@ -63,12 +63,12 @@
             <div class="card-section-empty" *ngIf="!interest">
                 <img src="svg/illustration-empty.svg" alt="">
                 <h1>Results shown here</h1>
-                <p>Complete the from and click "calculate repayments" to see your monthly repayments would be.</p>
+                <p>Fill out the form and click "calculate" to see what your interest would be.</p>
             </div>
             
             <div class="card-section-full" *ngIf="interest">
                 <h1>Your results</h1>
-                <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+                <p>Your results are displayed below based on the information you provided. To adjust your results, edit the form and click "calculate" again..</p>
                 <app-interest-card
                     finalAmount="{{ interest.finalAmount }}"
                     interestAmount="{{ interest.interestAmount }}"
