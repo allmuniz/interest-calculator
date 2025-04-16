@@ -1,59 +1,77 @@
-# InterestCalculator
+# 📊 Interest Calculator - Angular 19 + Java API
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+Aplicação web desenvolvida com **Angular 19** para calcular o rendimento de investimentos com **juros simples ou compostos**. A interface é moderna, responsiva e fácil de usar. O back-end da aplicação foi desenvolvido por mim em Java e está disponível [aqui](https://github.com/allmuniz/api-interest-calculator).
 
-## Development server
+---
 
-To start a local development server, run:
+## 🔧 Funcionalidades
+
+- 💰 Cálculo de Juros Simples e Compostos
+- 📥 Entrada do valor inicial e valor mensal
+- 📅 Período personalizável (em anos)
+- 📈 Taxa de juros anual
+- 🧮 Exibição de:
+  - Valor final acumulado
+  - Total investido
+  - Juros ganhos
+- 🧹 Botão "Clear All" para resetar os campos
+- 📱 Interface responsiva
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Front-End
+
+- Angular 19
+- TypeScript
+- CSS
+- HTML5
+
+### Back-End
+
+- Java com Spring Boot
+- Disponível no repositório: [https://github.com/allmuniz/api-interest-calculator](https://github.com/allmuniz/api-interest-calculator)
+
+---
+
+## ▶️ Como Executar o Projeto
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/seu-usuario/interest-calculator-angular.git
+cd interest-calculator-angular
+### 2. Instalar dependências
+
+```bash
+npm install
+```
+
+### 3. Rodar o servidor Angular
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse: `http://localhost:4200`
 
-## Code scaffolding
+### 4. Rodar o backend (Java)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Clone e execute o projeto disponível no repositório do backend:
 
-```bash
-ng generate component component-name
-```
+👉 https://github.com/allmuniz/api-interest-calculator
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🤝 Contribuições
 
-## Building
+Fique à vontade para abrir issues ou pull requests. Toda ajuda é bem-vinda!
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🧑‍💻 Autor
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Desenvolvido por **Allan Muniz** 🚀
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/allan-muniz-reis/)!
