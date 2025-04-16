@@ -67,8 +67,6 @@ export class DashboardComponent {
           finalAmount: response.finalAmount.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
           interestAmount: response.interestAmount.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
         };
-        console.log('Resposta do backend:', response);
-        console.log('Resposta formatada:', this.interest);
       },
       error: (err) => {
         console.error('Erro ao calcular:', err);
