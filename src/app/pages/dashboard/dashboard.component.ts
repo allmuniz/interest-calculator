@@ -15,6 +15,11 @@ interface InterestForm{
   time: FormControl,
   type: FormControl
 }
+
+interface interestResponseString {
+  finalAmount: string,
+  interestAmount: string
+}
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -28,7 +33,7 @@ interface InterestForm{
 export class DashboardComponent {
 
   interestForm!: FormGroup<InterestForm>;
-  interest: InterestResponse | null = null;
+  interest: interestResponseString | null = null;
 
   constructor(
     private interestService: InterestService
@@ -58,8 +63,12 @@ export class DashboardComponent {
   
     this.interestService.calculator(request).subscribe({
       next: (response) => {
-        this.interest = response;
+        this.interest = {
+          finalAmount: response.finalAmount.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+          interestAmount: response.interestAmount.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+        };
         console.log('Resposta do backend:', response);
+        console.log('Resposta formatada:', this.interest);
       },
       error: (err) => {
         console.error('Erro ao calcular:', err);
