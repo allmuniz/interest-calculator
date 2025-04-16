@@ -31,17 +31,17 @@
                 title="Mortgage Type"
                 conjunto="mortgageType"
                 valueType="1"
-                label="Repayment"
+                label="Simple"
             />
             <app-checkbox
                 formControlName="type"
                 conjunto="mortgageType"
                 valueType="2"
-                label="Interest Only"
+                label="Compound"
             />
 
             <app-button
-                (submit)="teste()"
+                (submit)="submit()"
                 icone="svg/icon-calculator.svg"
                 descricao="Calculator image"
                 title="calculate Repayments"
@@ -50,16 +50,21 @@
         </form>
     </main>
     <section class="card-section">
-        <div class="card-section-empty">
+
+        <div class="card-section-empty" *ngIf="!interest">
             <img src="svg/illustration-empty.svg" alt="">
             <h1>Results shown here</h1>
             <p>Complete the from and click "calculate repayments" to see your monthly repayments would be.</p>
         </div>
         
-        <div class="card-section-full">
+        <div class="card-section-full" *ngIf="interest">
             <h1>Your results</h1>
             <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
-            <app-interest-card></app-interest-card>
+            <app-interest-card
+                finalAmount="{{ interest.finalAmount }}"
+                interestAmount="{{ interest.interestAmount }}"
+            />
         </div>
+
     </section>
 </body>
