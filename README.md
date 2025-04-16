@@ -42,6 +42,7 @@ Aplicação web desenvolvida com **Angular 19** para calcular o rendimento de in
 ```bash
 git clone https://github.com/seu-usuario/interest-calculator-angular.git
 cd interest-calculator-angular
+```
 ### 2. Instalar dependências
 
 ```bash
