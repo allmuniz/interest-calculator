@@ -1,4 +1,7 @@
 .group-label-input {
+
+  margin-bottom: 25px;
+
   p {
     font-size: 13px;
     margin-bottom: 15px;
@@ -12,8 +15,17 @@
     border-radius: 4px;
     overflow: hidden;
     width: 100%;
-    margin-bottom: 25px;
     transition: all 0.3s ease;
+  }
+
+  .input-error {
+    border: 1px solid var(--color-primary-red);
+  }
+
+  .error-message{
+    margin-top: 5px;
+    font-size: 10px;
+    color: var(--color-primary-red);
   }
 
   .input-group input {
@@ -31,9 +43,14 @@
     color: var(--color-neutral-slate-500);
   }
 
+  .input-error span{
+    background-color: var(--color-primary-red);
+    color: var(--color-neutral-white);
+  }
+
   /* Estilo quando o input estiver focado */
   .input-group:focus-within {
-    border: 2px solid var(--color-primary-lime); /* ou qualquer outra cor de destaque */
+    border: 2px solid var(--color-primary-lime); 
     background-color: var(--color-secundary-lime);
     
     span{

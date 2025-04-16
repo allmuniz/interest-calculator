@@ -1,17 +1,11 @@
-import { Component, forwardRef, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl  } from '@angular/forms';
 type InputTypes = "text" | "number"
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
-      multi: true
-    }
-  ],
+  imports: [CommonModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.css'
 })
@@ -25,6 +19,14 @@ export class InputComponent implements ControlValueAccessor{
   value: string = '';
   onChange:any = () => {}
   onTouched:any = () => {}
+
+  constructor(
+    @Self() @Optional() public ngControl: NgControl
+  ) {
+    if (this.ngControl != null) {
+      this.ngControl.valueAccessor = this;
+    }
+  }
 
   onInput(event: Event){
     const value = (event.target as HTMLInputElement).value;
