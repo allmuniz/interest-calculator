@@ -28,7 +28,7 @@ interface InterestForm{
 export class DashboardComponent {
 
   interestForm!: FormGroup<InterestForm>;
-  interest!: InterestResponse;
+  interest: InterestResponse | null = null;
 
   constructor(
     private interestService: InterestService
@@ -66,4 +66,10 @@ export class DashboardComponent {
       }
     });
   }
+
+  clear() {
+    this.interestForm.reset();
+    this.interest = null;
+  }
+  
 }
