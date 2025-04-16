@@ -12,14 +12,25 @@
                 </button>
             </header>
             <form [formGroup]="interestForm">
-                <app-input
-                    formControlName="capital"
-                    label="Initial Amount"
-                    type="number"
-                    span="R$"
-                />
+
+                <section class="group-inputs">
+                    <app-input
+                        formControlName="capital"
+                        label="Initial Amount"
+                        type="number"
+                        span="R$"
+                    />
+
+                    <app-input
+                        formControlName="monthlyValue"
+                        label="Monthly value"
+                        type="number"
+                        span="R$"
+                    />
+
+                </section>
     
-                <section class="inputs-middle">
+                <section class="group-inputs">
                     <app-input
                         formControlName="time"
                         label="Period"
@@ -72,6 +83,7 @@
                 <app-interest-card
                     finalAmount="{{ interest.finalAmount }}"
                     interestAmount="{{ interest.interestAmount }}"
+                    valueInvested="{{ interest.valueInvested }}"
                 />
             </div>
         </section>

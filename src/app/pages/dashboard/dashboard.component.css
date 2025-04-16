@@ -125,7 +125,7 @@ body{
                     }
                 }
 
-                .inputs-middle{
+                .group-inputs{
                     display: flex;
                     gap: 20px;
                 }

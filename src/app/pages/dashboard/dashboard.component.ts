@@ -6,11 +6,11 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { InterestService } from '../../services/interest.service';
 import { InterestRequest } from '../../types/interest-request.type';
 import { InputComponent } from '../../components/input/input.component';
-import { InterestResponse } from '../../types/interest-response.type';
 import { CommonModule } from '@angular/common';
 
 interface InterestForm{
   capital: FormControl,
+  monthlyValue: FormControl,
   interestRate: FormControl,
   time: FormControl,
   type: FormControl
@@ -18,7 +18,8 @@ interface InterestForm{
 
 interface interestResponseString {
   finalAmount: string,
-  interestAmount: string
+  interestAmount: string,
+  valueInvested: string,
 }
 @Component({
   selector: 'app-dashboard',
@@ -40,6 +41,7 @@ export class DashboardComponent {
   ){
     this.interestForm = new FormGroup({
       capital: new FormControl('', [Validators.required]),
+      monthlyValue: new FormControl(''),
       interestRate: new FormControl('', [Validators.required]),
       time: new FormControl('', [Validators.required]),
       type: new FormControl('', [Validators.required])
@@ -56,6 +58,7 @@ export class DashboardComponent {
   
     const request: InterestRequest = {
       capital: Number(formValue.capital),
+      monthlyValue: Number(formValue.monthlyValue),
       interestRate: Number(formValue.interestRate),
       time: Number(formValue.time),
       type: Number(formValue.type)
@@ -66,6 +69,7 @@ export class DashboardComponent {
         this.interest = {
           finalAmount: response.finalAmount.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
           interestAmount: response.interestAmount.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+          valueInvested: response.valueInvested.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
         };
       },
       error: (err) => {
